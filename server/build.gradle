@@ -1,0 +1,28 @@
+plugins {
+    id "org.gretty" version "3.0.3"
+    id 'war'
+    id 'kotlin'
+}
+
+repositories {
+    maven { url 'https://maven.aliyun.com/repository/google/' }
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    // region log4j
+    implementation 'org.apache.logging.log4j:log4j-api:2.13.3'
+    implementation 'org.apache.logging.log4j:log4j-core:2.13.3'
+    implementation 'org.apache.logging.log4j:log4j-web:2.13.3'
+    // endregion
+
+    implementation 'com.google.zxing:core:3.4.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation 'junit:junit:4.13.1'
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
