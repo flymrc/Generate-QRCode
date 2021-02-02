@@ -1,3 +1,3 @@
-# Gradlew Leancloud Server
+# Gradlew Server
 
 * Local Development: `./local.sh`
