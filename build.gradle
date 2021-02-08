@@ -1,6 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext.kotlin_version = "1.4.21"
+    ext.kotlin_coroutine_version = '1.4.1'
+
     repositories {
         maven { url 'https://maven.aliyun.com/repository/google/' }
         maven { url 'https://jitpack.io' }
@@ -53,10 +55,11 @@ task updatePrepush(type: Exec) {
     commandLine 'cp', '-f', inputs.files[0], outputs.files[0]
 }
 
+gradle.startParameter.taskNames = [":updatePrepush"] + gradle.startParameter.taskNames
+
 allprojects {
     repositories {
         google()
         jcenter()
     }
 }
-
