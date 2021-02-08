@@ -2,8 +2,12 @@
 buildscript {
     ext.kotlin_version = "1.4.21"
     repositories {
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://jitpack.io' }
         google()
         jcenter()
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/public/' }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.2"
@@ -14,6 +18,41 @@ buildscript {
     }
 }
 
+plugins {
+    id "com.diffplug.spotless" version "5.7.0"
+}
+
+spotless {
+    java {
+        target '*/src/**/*.java'
+        googleJavaFormat()
+    }
+
+    kotlin {
+        target '*/src/**/*.kt'
+        ktlint('0.39.0').userData(['disabled_rules': 'no-wildcard-imports'])
+    }
+
+    format 'xml', {
+        target 'app/src/main/**/*.xml'
+        eclipseWtp('xml').configFile('spotless.xml.prefs')
+    }
+
+    format 'gradle', {
+        target '**/*.gradle'
+        indentWithSpaces()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}
+
+task updatePrepush(type: Exec) {
+    inputs.files 'devtools/pre-push.sh'
+    outputs.files '.git/hooks/pre-push'
+
+    commandLine 'cp', '-f', inputs.files[0], outputs.files[0]
+}
+
 allprojects {
     repositories {
         google()
@@ -21,6 +60,3 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
