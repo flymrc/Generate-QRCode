@@ -1,3 +1,3 @@
 README.md
-src/main/kotlin/com/example/openapi_server/api/PlayerApi.kt
-src/main/kotlin/com/example/openapi_server/model/Player.kt
+src/main/kotlin/com/example/openapi_server/api/UserApi.kt
+src/main/kotlin/com/example/openapi_server/model/XUser.kt
