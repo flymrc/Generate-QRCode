@@ -10,11 +10,11 @@ servers:
   - url: http://localhost:8080/
     description: Local server for development
 paths:
-  /player/current:
+  /user/current:
     get:
       summary: Request user for current user.
       tags:
-        - Player
+        - XUser
       responses:
         '200':
           description: Success
