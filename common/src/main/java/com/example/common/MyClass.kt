@@ -1,4 +1,3 @@
 package com.example.common
 
-class MyClass {
-}
+class MyClass
