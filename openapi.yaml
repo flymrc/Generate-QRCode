@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 info:
   version: 1.0.0
-  title: Xoo OpenAPI Backend
+  title: OpenAPI Backend
 servers:
   - url: https://openapi.cn-north.lc.example.com/
     description: Production server
