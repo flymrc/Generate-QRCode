@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: OpenAPIBackend
+
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+    com:
+      example:
+        openapi_server:
+    .DefaultExceptionHandler: DEBUG
+
+    org.springframework.boot.web: INFO
+
+management:
+  endpoints.web.base-path: /adminz
+  endpoints.web.exposure.include: "*"
