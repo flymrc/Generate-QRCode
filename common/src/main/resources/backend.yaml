@@ -1,0 +1,58 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Backend
+paths:
+  /userSession/updateCameraIP:
+    parameters:
+      - name: userSessionId
+        description: objectId for user session.
+        in: query
+        schema:
+          type: string
+      - name: cameraIP
+        in: query
+        schema:
+          type: string
+      - name: qrCodeAuth
+        in: query
+        schema:
+          type: string
+    get:
+      x-function: updateCameraIP
+      summary: Update Camera IP.
+      tags:
+        - userSession
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+components:
+  schemas:
+    UserSession:
+      type: object
+      required:
+        - user
+      properties:
+        user:
+          type: AVUser
+          x-object-index: default
+          x-object-queryable: true
+        isStaging:
+          type: boolean
+        cameraIP:
+          type: string
+        updateCameraIPAt:
+          type: string
+          format: date
+          description: Update camera IP time.
+        qrCodeAuth:
+          type: string
+          description: Random string for camera authentication.
+        updateQRCodeAuthAt:
+          type: string
+          format: date
+          description: Update QRCode auth time.
