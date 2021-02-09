@@ -1,5 +1,5 @@
 plugins {
-    id "org.gretty" version "3.0.3"
+    id "org.gretty"
     id 'war'
     id 'kotlin'
 }
