@@ -40,6 +40,12 @@ spotless {
 
     kotlin {
         target '*/src/**/*.kt'
+        targetExclude([
+                "common/src/main/kotlin/**/*.kt",
+                "openapi-client/src/main/kotlin/**/*.kt",
+                "openapi-server/src/main/kotlin/**/api/*Api.kt",
+                "openapi-server/src/main/kotlin/**/model/*.kt"
+        ])
         ktlint('0.39.0').userData(['disabled_rules': 'no-wildcard-imports'])
     }
 
