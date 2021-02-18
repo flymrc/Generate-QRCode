@@ -1,3 +1,5 @@
 README.md
 src/main/kotlin/com/example/openapi_server/api/UserApi.kt
+src/main/kotlin/com/example/openapi_server/api/UsersApi.kt
+src/main/kotlin/com/example/openapi_server/model/ErrorMessage.kt
 src/main/kotlin/com/example/openapi_server/model/User.kt

@@ -14,10 +14,7 @@ logging:
     root: INFO
     org.springframework.web: INFO
     org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
-    com:
-      example:
-        openapi_server:
-    .DefaultExceptionHandler: DEBUG
+    com.example.openapi_server.api.DefaultExceptionHandler: DEBUG
 
     org.springframework.boot.web: INFO
 

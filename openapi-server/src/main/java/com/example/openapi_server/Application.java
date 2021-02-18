@@ -16,6 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
       "com.example.openapi_server",
     })
 public class Application extends SpringBootServletInitializer {
+
   public static void main(String[] args) {
     final Logger logger = LogManager.getLogger(Application.class);
     logger.info("OpenAPI Server init from main");
