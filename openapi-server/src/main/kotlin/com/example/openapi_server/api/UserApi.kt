@@ -5,7 +5,7 @@
 */
 package com.example.openapi_server.api
 
-import com.example.openapi_server.model.XUser
+import com.example.openapi_server.model.User
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
@@ -36,7 +36,7 @@ interface UserApi {
             value = ["/user/current"],
             produces = ["application/json"]
     )
-    fun userCurrentGet(): ResponseEntity<XUser> {
+    fun userCurrentGet(): ResponseEntity<User> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 }
