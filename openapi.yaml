@@ -14,7 +14,7 @@ paths:
     get:
       summary: Request user for current user.
       tags:
-        - XUser
+        - User
       responses:
         '200':
           description: Success
