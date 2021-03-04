@@ -13,15 +13,11 @@ import javax.validation.Valid
 
 /**
  * 
- * @param objectId 
  * @param userId 
  * @param nickname 
- * @param avatarUrl 
+ * @param objectId 
  */
 data class User(
-
-    @get:NotNull  
-    @field:JsonProperty("objectId") val objectId: kotlin.String,
 
     @get:NotNull  
     @field:JsonProperty("userId") val userId: kotlin.String,
@@ -29,8 +25,7 @@ data class User(
     @get:NotNull  
     @field:JsonProperty("nickname") val nickname: kotlin.String,
 
-    @get:NotNull  
-    @field:JsonProperty("avatarUrl") val avatarUrl: kotlin.String
+    @field:JsonProperty("objectId") val objectId: kotlin.String? = null
 ) {
 
 }
