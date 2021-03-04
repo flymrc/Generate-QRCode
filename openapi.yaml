@@ -32,18 +32,14 @@ components:
     User:
       type: object
       required:
-        - objectId
         - userId
         - nickname
-        - avatarUrl
       properties:
         objectId:
           type: string
         userId:
           type: string
         nickname:
-          type: string
-        avatarUrl:
           type: string
 security:
   - leancloudAuth: []
