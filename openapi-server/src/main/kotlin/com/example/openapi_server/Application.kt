@@ -10,7 +10,6 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = [SecurityAutoConfiguration::class])
 @ComponentScan(
     basePackages = [
         "com.example.openapi_server",
