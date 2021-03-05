@@ -2,12 +2,15 @@ package com.example.openapi_server
 
 import org.apache.logging.log4j.LogManager
 import org.springframework.boot.SpringApplication
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
 import org.springframework.boot.builder.SpringApplicationBuilder
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan
 
 @SpringBootApplication
+@EnableAutoConfiguration(exclude = [SecurityAutoConfiguration::class])
 @ComponentScan(
     basePackages = [
         "com.example.openapi_server",
